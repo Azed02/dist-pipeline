@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mock-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: mock-app
+  template:
+    metadata:
+      labels:
+        app: mock-app
+    spec:
+      containers:
+      - name: mock-app
+        image: nginx:latest
+        ports:
+        - containerPort: 80
+        envFrom:
+        - configMapRef:
+            name: mock-app-config
