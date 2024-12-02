@@ -30,9 +30,7 @@ jobs:
       
       - name: Scan Docker Image with Trivy
         run: |
-          - name: Scan Docker Image with Trivy
-  run: |
-    trivy image ${{ secrets.DOCKER_USERNAME }}/mock-app:${{ github.run_number }} --severity HIGH,CRITICAL --exit-code 1
+          trivy image ${{ secrets.DOCKER_USERNAME }}/mock-app:${{ github.run_number }} --severity HIGH,CRITICAL --exit-code 1
 
       - name: Push Docker Image to DockerHub
         if: success() 
