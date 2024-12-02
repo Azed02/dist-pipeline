@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: full-deploy-app
-        image: asmaezaidi/mock-app:1 ##i ve put it in a public repo , argo doesn t need to authenticate 
+        image: asmaezaidi/mock-app:8
         ports:
         - containerPort: 8080
