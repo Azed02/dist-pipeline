@@ -1,7 +1,7 @@
 FROM adoptopenjdk/openjdk11:alpine-jre
 
 
-ARG artifact=target/full-deploy-app.jar
+ARG artifact=../target/full-deploy-app.jar
 
 WORKDIR /opt/app
 
