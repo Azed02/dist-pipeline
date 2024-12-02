@@ -1,22 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mock-app
+  name: full-deploy-app
+  labels:
+    app: full-deploy-app
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: mock-app
+      app: full-deploy-app
   template:
     metadata:
       labels:
-        app: mock-app
+        app: full-deploy-app
     spec:
       containers:
-      - name: mock-app
-        image: nginx:latest
+      - name: full-deploy-app
+        image: asmaezaidi/mock-app:1 ##i ve put it in a public repo , argo doesn t need to authenticate 
         ports:
-        - containerPort: 80
-        envFrom:
-        - configMapRef:
-            name: mock-app-config
+        - containerPort: 8080
