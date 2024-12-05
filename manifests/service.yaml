@@ -3,9 +3,10 @@ kind: Service
 metadata:
   name: mock-app-service
 spec:
+  type: NodePort
   selector:
     app: mock-app
   ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 80
+  - protocol: TCP
+    port: 80        
+    targetPort: 8080 
