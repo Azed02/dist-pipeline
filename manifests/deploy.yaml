@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mock-app
+  name: sci-app
   labels:
-    app: mock-app
+    app: sci-app
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: mock-app
+      app: sci-app
   template:
     metadata:
       labels:
-        app: mock-app
+        app: sci-app
     spec:
       containers:
-      - name: mock-app
-        image: asmaezaidi/mock-app:14
+      - name: sci-app
+        image: asmaezaidi/sci-app:14
         ports:
         - containerPort: 8080
